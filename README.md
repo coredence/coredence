@@ -20,11 +20,16 @@ but the short version is that the claims worth checking are checkable without
 it, and more conclusively:
 
 ```sh
-lsof -i -a -p $(pgrep -x Coredence)    # prints nothing: there are no connections
-sqlite3 ~/.karaca/brain.db '.tables'   # your whole identity, in a tool we did not write
+lsof -i -a -p $(pgrep -x Coredence)      # prints nothing: the window opens no sockets
+sqlite3 ~/.coredence/brain.db '.tables'  # your whole identity, in a tool we did not write
 ```
 
 Source code tells you what should happen. Those tell you what is happening.
+
+One connection exists and it is worth stating plainly: while it is distilling,
+the engine calls the model you chose — your Claude Code, your API key, or a
+server on your own machine. That is the only thing that leaves, it happens only
+during a pass, and the last of those three options removes it entirely.
 
 ## Status
 
@@ -37,11 +42,29 @@ and nothing to put you in one.
 
 ## Getting it, when it lands
 
-One download. The engine ships inside the app — nothing to clone, no Python to
-install, no command to run. Open it and it asks which sources it may read.
+One download, macOS 14 or later, Apple silicon. The engine ships inside the app
+— nothing to clone, no Python to install, no command to run.
+
+On first launch it asks two things: where it should think, and what to call
+you. Reading your work needs a language model and the download does not include
+one, so you point it at the Claude Code you already have, at an API key of your
+own, or at any OpenAI-compatible server — including a model running on your own
+machine.
 
 A Windows version is planned. An identity is one file and moves between
 machines with you.
+
+## Handing it to an assistant
+
+The identity is more useful inside the tools you already work in than in a
+window of its own. Coredence ships an MCP server, so an assistant can ask what
+you think about a subject and what any single rule was drawn from, rather than
+being handed a file.
+
+It runs on your machine — the client starts it and talks to it over a pipe, so
+there is no account, no key and nothing listening on a port. It is read-only:
+an assistant can quote your identity and disagree with it, but deciding who you
+are stays with you.
 
 ## Documentation
 
