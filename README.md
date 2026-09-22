@@ -21,7 +21,7 @@ it, and more conclusively:
 
 ```sh
 lsof -i -a -p $(pgrep -x Coredence)      # prints nothing: the window opens no sockets
-sqlite3 ~/.coredence/brain.db '.tables'  # your whole identity, in a tool we did not write
+sqlite3 ~/.coredence/coredence.db '.tables'  # your whole identity, in a tool we did not write
 ```
 
 Source code tells you what should happen. Those tell you what is happening.
@@ -33,16 +33,18 @@ during a pass, and the last of those three options removes it entirely.
 
 ## Status
 
-Not released yet. Builds are signed with a Developer ID and notarised by Apple,
-but none are public.
+Released. The current version is on the [releases
+page](../../releases/latest), signed with a Developer ID and notarised by
+Apple.
 
 **Watch this repository** (Watch → Custom → Releases) and GitHub will tell you
-when the first one lands. There is no mailing list, because there is no account
+when the next one lands. There is no mailing list, because there is no account
 and nothing to put you in one.
 
-## Getting it, when it lands
+## Getting it
 
-One download, macOS 14 or later, Apple silicon. The engine ships inside the app
+One download from the [releases page](../../releases/latest) or from
+[coredence.com](https://coredence.com) — macOS 14 or later, Apple silicon. The engine ships inside the app
 — nothing to clone, no Python to install, no command to run.
 
 On first launch it asks two things: where it should think, and what to call
@@ -51,8 +53,8 @@ one, so you point it at the Claude Code you already have, at an API key of your
 own, or at any OpenAI-compatible server — including a model running on your own
 machine.
 
-A Windows version is planned. An identity is one file and moves between
-machines with you.
+Windows works too — the engine, the installer and the window all ship.
+An identity is one file and moves between machines with you.
 
 ## Handing it to an assistant
 
@@ -62,9 +64,25 @@ you think about a subject and what any single rule was drawn from, rather than
 being handed a file.
 
 It runs on your machine — the client starts it and talks to it over a pipe, so
-there is no account, no key and nothing listening on a port. It is read-only:
-an assistant can quote your identity and disagree with it, but deciding who you
-are stays with you.
+there is no account, no key and nothing listening on a port. It is read-only,
+and that is mechanical rather than a promise: the connection opens the database
+read-only, so SQLite itself refuses a write. An assistant can quote your
+identity and disagree with it, but deciding who you are stays with you.
+
+For Claude Desktop it ships as a desktop extension — `coredence-<version>.mcpb`
+on the [releases page](../../releases/latest), five read-only tools:
+
+| Tool | What it answers |
+|------|-----------------|
+| `identity` | The whole identity, layer by layer |
+| `rules` | What this person does or values on a given subject |
+| `evidence` | The real moments a rule rests on |
+| `axes` | How they choose when nothing has been said |
+| `topics` | The subjects they work on |
+
+Everywhere else, `coredence connect <client>` writes the configuration for
+you — Claude Code, Cursor, VS Code, Windsurf, JetBrains, Codex and Gemini CLI
+are known by name.
 
 ## Documentation
 
