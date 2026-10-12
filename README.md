@@ -87,7 +87,27 @@ on the [releases page](../../releases/latest), five read-only tools:
 | `axes` | How they choose when nothing has been said |
 | `topics` | The subjects they work on |
 
-Everywhere else, `coredence connect <client>` writes the configuration for
+The app connects the assistants it finds on your machine during setup. To add
+Coredence from an assistant instead, this repository is also a plugin and an
+extension. Install the app first, then open it once, so that the `coredence`
+command exists; the plugin only starts it with `coredence mcp`.
+
+```sh
+# Claude Code
+/plugin install coredence --marketplace coredence/coredence
+
+# Codex
+codex plugin marketplace add coredence/coredence
+
+# Gemini CLI
+gemini extensions install https://github.com/coredence/coredence
+```
+
+VS Code and GitHub Copilot read the same plugin (`plugin.json`, `mcp.json`).
+What the plugin runs is the read-only server above and nothing else; it carries
+no code of its own.
+
+From a terminal, `coredence connect <client>` writes the configuration for
 you — Claude Code, Cursor, VS Code, Windsurf, JetBrains, Codex and Gemini CLI
 are known by name.
 
