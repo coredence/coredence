@@ -6,7 +6,9 @@ Coredence reads what you have already written, distils it into rules about how
 you actually work, and keeps every one of them pointed at the evidence it came
 from. The result lives in a single file on your own machine.
 
-→ **[coredence.com](https://coredence.com)**
+→ **[coredence.com](https://coredence.com)** · **[Try it in your browser](https://coredence.com/deneme)** — the real window on a made-up person's identity, nothing to install
+
+![Coredence: a topic, one of its rules, and the moments the rule was drawn from](docs/demo.gif)
 
 ---
 
@@ -55,6 +57,11 @@ machine.
 
 Windows works too — the engine, the installer and the window all ship.
 An identity is one file and moves between machines with you.
+
+Already use an MCP client? Coredence is in the official [MCP
+Registry](https://registry.modelcontextprotocol.io) as
+`io.github.coredence/coredence`. The server is read-only: it answers questions
+about an identity the app has already built on your machine.
 
 ## Handing it to an assistant
 
