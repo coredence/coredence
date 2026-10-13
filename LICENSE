@@ -1,0 +1,9 @@
+Copyright (c) 2026 Ahmet Karaca (Akaya Labs). All rights reserved.
+
+This repository holds documentation and the manifests that connect AI
+assistants to Coredence (gemini-extension.json, plugin.json, mcp.json,
+.mcp.json, .claude-plugin/, .agents/). It contains no Coredence source code.
+
+You may install and use these files to connect an assistant to a copy of
+Coredence you have installed. Coredence itself, the application these files
+start, is licensed under the terms at https://coredence.com/license.

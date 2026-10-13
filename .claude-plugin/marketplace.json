@@ -1,0 +1,12 @@
+{
+  "name": "coredence",
+  "description": "Coredence: your measured working identity, read-only, from your own machine.",
+  "owner": { "name": "Akaya Labs", "url": "https://coredence.com" },
+  "plugins": [
+    {
+      "name": "coredence",
+      "source": "./",
+      "description": "Gives Claude the rules you actually work by, each linked to the moments it came from. Requires the Coredence app."
+    }
+  ]
+}
