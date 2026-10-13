@@ -1,0 +1,29 @@
+{
+  "name": "coredence",
+  "version": "1.9.6",
+  "description": "How you actually work, measured from your own sessions, commits and notes, served read-only from your machine. Requires the Coredence app.",
+  "author": { "name": "Akaya Labs", "url": "https://coredence.com" },
+  "homepage": "https://coredence.com",
+  "repository": "https://github.com/coredence/coredence",
+  "license": "LicenseRef-Coredence",
+  "keywords": ["identity", "memory", "context", "local-first", "read-only"],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Coredence",
+    "shortDescription": "The rules you actually work by, read-only from your machine",
+    "longDescription": "Coredence reads your own Claude Code, Cursor and Codex sessions, commits and notes, distils them into rules about how you work, and links every rule to the moments it came from. Codex can ask for the whole picture at the start of a task, search rules by subject, and check the evidence behind any one of them. The server is read-only and local: it opens your identity database read-only and makes no network requests.",
+    "developerName": "Akaya Labs",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "websiteURL": "https://coredence.com",
+    "privacyPolicyURL": "https://coredence.com/privacy",
+    "termsOfServiceURL": "https://coredence.com/terms",
+    "defaultPrompt": [
+      "What do my Coredence rules say about how I like tests written?",
+      "Before you start, read my identity and tell me which rules apply to this task",
+      "Show me the evidence behind my rule about commit messages"
+    ],
+    "brandColor": "#FF8A63",
+    "logo": "./docs/logo.png"
+  }
+}
