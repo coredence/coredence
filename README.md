@@ -96,6 +96,10 @@ command exists; the plugin only starts it with `coredence mcp`.
 # Claude Code
 /plugin install coredence --marketplace coredence/coredence
 
+# Claude Code before 2.1.275: add the marketplace, then install
+/plugin marketplace add coredence/coredence
+/plugin install coredence@coredence
+
 # Codex
 codex plugin marketplace add coredence/coredence
 
