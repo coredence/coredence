@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "coredence",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "How you actually work, measured from your own sessions, commits and notes, served read-only from your machine. Requires the Coredence app.",
   "author": { "name": "Akaya Labs", "url": "https://coredence.com" },
   "homepage": "https://coredence.com",
