@@ -1,6 +1,6 @@
 {
   "name": "coredence",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "How you actually work, measured from your own sessions, commits and notes, served read-only from your machine.",
   "mcpServers": {
     "coredence": {
