@@ -1,14 +1,14 @@
 # Coredence
 
-**See what your work says about you.**
+**Your mind's digital twin.**
 
-Coredence reads what you have already written, distils it into rules about how
-you actually work, and keeps every one of them pointed at the evidence it came
-from. The result lives in a single file on your own machine.
+Coredence reads what you have already written, consolidates it into memories
+about how you actually work, and keeps every one of them tied to the traces it
+came from. The result lives in a single file on your own machine.
 
-→ **[coredence.com](https://coredence.com)** · **[Try it in your browser](https://coredence.com/deneme)** — the real window on a made-up person's identity, nothing to install
+→ **[coredence.com](https://coredence.com)** · **[Try it in your browser](https://coredence.com/deneme)** — the real window on a made-up person's mind, nothing to install
 
-![Coredence: a topic, one of its rules, and the moments the rule was drawn from](docs/demo.gif)
+![Coredence: a cortex, one of its memories, and the moments the memory was drawn from](docs/demo.gif)
 
 ---
 
@@ -23,15 +23,16 @@ it, and more conclusively:
 
 ```sh
 lsof -i -a -p $(pgrep -x Coredence)      # prints nothing: the window opens no sockets
-sqlite3 ~/.coredence/coredence.db '.tables'  # your whole identity, in a tool we did not write
+sqlite3 ~/.coredence/coredence.db '.tables'  # your whole mind, in a tool we did not write
 ```
 
 Source code tells you what should happen. Those tell you what is happening.
 
-One connection exists and it is worth stating plainly: while it is distilling,
-the engine calls the model you chose — your Claude Code, your API key, or a
-server on your own machine. That is the only thing that leaves, it happens only
-during a pass, and the last of those three options removes it entirely.
+One connection exists and it is worth stating plainly: while it is
+consolidating, the engine calls the model you chose — your Claude Code, your API
+key, or a server on your own machine. That is the only thing that leaves, it
+happens only during a cycle, and the last of those three options removes it
+entirely.
 
 ## Status
 
@@ -56,36 +57,36 @@ own, or at any OpenAI-compatible server — including a model running on your ow
 machine.
 
 Windows works too — the engine, the installer and the window all ship.
-An identity is one file and moves between machines with you.
+A mind is one file and moves between machines with you.
 
 Already use an MCP client? Coredence is in the official [MCP
 Registry](https://registry.modelcontextprotocol.io) as
 `io.github.coredence/coredence`. The server is read-only: it answers questions
-about an identity the app has already built on your machine.
+about a mind the app has already built on your machine.
 
 ## Handing it to an assistant
 
-The identity is more useful inside the tools you already work in than in a
-window of its own. Coredence ships an MCP server, so an assistant can ask what
-you think about a subject and what any single rule was drawn from, rather than
+The mind is more useful inside the tools you already work in than in a window
+of its own. Coredence ships an MCP server, so an assistant can ask what you
+think about a subject and what any single memory was drawn from, rather than
 being handed a file.
 
 It runs on your machine — the client starts it and talks to it over a pipe, so
 there is no account, no key and nothing listening on a port. It is read-only,
 and that is mechanical rather than a promise: the connection opens the database
-read-only, so SQLite itself refuses a write. An assistant can quote your
-identity and disagree with it, but deciding who you are stays with you.
+read-only, so SQLite itself refuses a write. An assistant can quote your mind
+and disagree with it, but deciding who you are stays with you.
 
 For Claude Desktop it ships as a desktop extension — `coredence-<version>.mcpb`
 on the [releases page](../../releases/latest), five read-only tools:
 
 | Tool | What it answers |
 |------|-----------------|
-| `identity` | The whole identity, layer by layer |
-| `rules` | What this person does or values on a given subject |
-| `evidence` | The real moments a rule rests on |
+| `identity` | The whole mind, layer by layer |
+| `rules` | Memories of what this person does or values on a given subject |
+| `evidence` | The real moments a memory rests on |
 | `axes` | How they choose when nothing has been said |
-| `topics` | The subjects they work on |
+| `topics` | The cortices: the subjects they work on |
 
 The app connects the assistants it finds on your machine during setup. To add
 Coredence from an assistant instead, this repository is also a plugin and an
@@ -115,10 +116,23 @@ From a terminal, `coredence connect <client>` writes the configuration for
 you — Claude Code, Cursor, VS Code, Windsurf, JetBrains, Codex and Gemini CLI
 are known by name.
 
+Assistants do not always call an MCP server on their own, so the mind can also
+be handed over directly:
+
+- **As an instructions file** — Codex (`~/.codex/AGENTS.md`), Gemini CLI
+  (`~/.gemini/GEMINI.md`) and VS Code with Copilot
+  (`~/.copilot/copilot-instructions.md`) read one every session. Coredence
+  writes its own marked section and refreshes it every cycle, leaving the rest
+  of the file alone. Settings › Assistants, or `coredence instructions <name> --on`.
+- **To chat assistants** — Claude, ChatGPT and Gemini chats take it through their
+  own memory import or custom instructions. Settings › Assistants › *Copy and
+  open* copies your strongest memories at the length each one accepts and opens
+  the right page; you paste. Nothing is sent from the app.
+
 ## Documentation
 
 - [Getting started](https://coredence.com/docs) — what it reads, what the five
-  layers mean, what to do with a rule you disagree with
+  layers mean, what to do with a memory you disagree with
 - [Privacy](https://coredence.com/privacy) — what is collected (nothing) and
   how to verify that rather than believe it
 - [Security](https://coredence.com/security) — signing, notarisation, and how
