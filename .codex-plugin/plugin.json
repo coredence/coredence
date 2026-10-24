@@ -1,6 +1,6 @@
 {
   "name": "coredence",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "How you actually work, measured from your own sessions, commits and notes, served read-only from your machine. Requires the Coredence app.",
   "author": { "name": "Akaya Labs", "url": "https://coredence.com" },
   "homepage": "https://coredence.com",
