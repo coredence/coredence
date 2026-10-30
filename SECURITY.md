@@ -1,8 +1,7 @@
 # Security
 
-Report a vulnerability through a [private security
-advisory](https://github.com/coredence/coredence/security/advisories/new),
-not a public issue. You will get an answer here.
+Report a vulnerability by email to support@coredence.com with SECURITY in the
+subject line, not in a public issue.
 
 What the plugins in this repository do: they start `coredence mcp`, the
 read-only MCP server inside the Coredence app you installed, over stdio. They
