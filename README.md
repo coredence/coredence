@@ -78,7 +78,24 @@ read-only, so SQLite itself refuses a write. An assistant can quote your mind
 and disagree with it, but deciding who you are stays with you.
 
 For Claude Desktop it ships as a desktop extension — `coredence-<version>.mcpb`
-on the [releases page](../../releases/latest), five read-only tools:
+on the [releases page](../../releases/latest). Any other MCP client takes the
+standard configuration; the `coredence` command exists once the app is
+installed and opened:
+
+```json
+{
+  "mcpServers": {
+    "coredence": {
+      "command": "coredence",
+      "args": ["mcp"]
+    }
+  }
+}
+```
+
+## Tools
+
+Five tools, all read-only:
 
 | Tool | What it answers |
 |------|-----------------|
